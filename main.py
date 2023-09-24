@@ -30,8 +30,5 @@ with open("./prompt_file") as prompt:
     pr = prompt.read()
     json_result = llm(prompt=pr)
     res = json_result.strip()
-    res = res.replace("\n", "", -1)
-    res = res.replace(" ", "", -1)
-
     res = json.loads(res)
     print(res)
