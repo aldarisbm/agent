@@ -1,16 +1,37 @@
 import os
+import json
 from dotenv import load_dotenv
-from langchain.llms import OpenAI
 
+from langchain.llms import LlamaCpp
+from langchain.callbacks.manager import CallbackManager
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
-def main():
-    load_dotenv()
-    llm = OpenAI(openai_api_key=os.environ.get("OPENAI_API_KEY"), temperature=0.5)
-    prediction = llm.predict("What is the best dog breed?")
-    print(prediction)
+load_dotenv()
 
+callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
+model_name = os.getenv("MODEL_PATH")
+grammar_file = os.getenv("GRAMMAR_FILE")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    main()
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# -n 256 -c 2048  --mlock -ngl 20 --temp 0.8 --batch_size 512 \
+
+llm = LlamaCpp(
+    model_path=model_name,
+    temperature=0,
+    use_mlock=True,
+    grammar_file=grammar_file,
+    n_batch=512,
+    n_ctx=4096,
+    n_gpu_layers=20,
+    callback_manager=callback_manager,
+    verbose=True,  # Verbose is required to pass to the callback manager
+)
+
+with open("./prompt_file") as prompt:
+    pr = prompt.read()
+    json_result = llm(prompt=pr)
+    res = json_result.strip()
+    res = res.replace("\n", "", -1)
+    res = res.replace(" ", "", -1)
+
+    res = json.loads(res)
+    print(res)
