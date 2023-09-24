@@ -4,9 +4,7 @@ from dotenv import load_dotenv
 
 from langchain.llms import LlamaCpp
 from langchain.callbacks.manager import CallbackManager
-from langchain.vectorstores import Chroma
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.document_loaders import PyPDFLoader
 
 load_dotenv()
 
@@ -25,10 +23,6 @@ llm = LlamaCpp(
     callback_manager=callback_manager,
     verbose=True,  # Verbose is required to pass to the callback manager
 )
-
-db = Chroma(collection_name="store", persist_directory="./chroma_db")
-
-
 
 with open("./prompt_file") as prompt:
     pr = prompt.read()
