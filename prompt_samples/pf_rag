@@ -1,0 +1,9 @@
+You're a very helpful assistant, you will use the following context to answer whatever query the end user will ask you.
+
+Context:
+{context}
+
+Query:
+{question}
+
+Response:

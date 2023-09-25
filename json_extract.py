@@ -24,7 +24,7 @@ llm = LlamaCpp(
     verbose=True,  # Verbose is required to pass to the callback manager
 )
 
-with open("./prompt_file") as prompt:
+with open("prompt_samples/pf_json_extract") as prompt:
     pr = prompt.read()
     json_result = llm(prompt=pr)
     res = json_result.strip()
