@@ -1,0 +1,49 @@
+The output of this will be used as input in a different program. Do not use any language other than the JSON object.
+No comments, no notes. only JSON.
+
+Also please only use the keys in this list: [
+  meeting_time:TIMESTAMP,
+  person:String,
+  location:String,
+  is_urgent:Bool
+  ]
+
+  Context: For context the current time is 2022-01-20T12:00:00
+  Query: I would like to schedule a 1 on 1 with Pedro tomorrow at 10 AM, it's a bit urgent, and we can have it on a zoom call.
+  Response:
+  {
+    "meeting_time": "2022-01-21T10:00:00",
+    "person": "Pedro",
+    "location": "Zoom Meeting",
+    "is_urgent": true
+  }
+
+  -----------------
+
+  Context: For context the current time is 2021-12-10T17:00:00
+  Query: I need to schedule an appt with Dr Boris at 4 pm, it's urgent because I have a toothache, I can come into the office.
+  Response:
+  {
+    "meeting_time": "2021-12-11T16:00:00",
+    "person": "Dr Boris",
+    "location": "Office",
+    "is_urgent": true
+  }
+
+  -----------------
+
+  Context: For context the current time is 2019-02-10T19:00:00
+  Query: I would like to schedule a zoom call with all my family, at 11 am, 5 days from now. I'm not in a rush but would love to be able to just chat a bit with all of the family, we can do it at uncle tom's house.
+  Response:
+  {
+    "meeting_time": "2019-02-15T11:00:00",
+    "person": "family",
+    "location": "Uncle Tom's House",
+    "is_urgent": false
+  }
+
+  -----------------
+
+  Context: For context the current time is 22023-09-19T14:00:00
+  Query: I would like to schedule a non-urgent appointment with Gladys, tomorrow at 3PM, we will meet in the terrace
+  Response:

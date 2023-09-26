@@ -1,0 +1,1 @@
+[Implement this, also wikipedia corpus seems pretty good](https://colab.research.google.com/github/UKPLab/sentence-transformers/blob/master/examples/applications/retrieve_rerank/retrieve_rerank_simple_wikipedia.ipynb#scrollTo=iVomHSSsbcut)
