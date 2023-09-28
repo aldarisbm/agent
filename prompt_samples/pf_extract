@@ -1,0 +1,42 @@
+**Story**:
+"Based on the provided story, extract relevant entities and fill in the following JSON schema. In a galaxy named Trixa, Captain Elara of the spaceship 'Stellar Drift' encountered a strange anomaly. The ship's AI system, 'Vox', detected a temporal disturbance emanating from planet Zorax. Elara, who is 45 years old, decided to investigate despite the warnings. Vox estimated a 70% chance of danger."
+**Instruction**:
+"Based on the provided story, extract relevant entities and fill in the following JSON schema."
+**JSON Schema**:
+{
+  "galaxy": "string",
+  "captain_name": "string",
+  "ship_name": "string",
+  "AI_name": "string",
+  "detected_issue": "string",
+  "planet": "string",
+  "danger_percentage": "number"
+}
+**Result**:
+{
+  "galaxy": "Trixa",
+  "captain_name": "Elara",
+  "ship_name": "Stellar Drift",
+  "AI_name": "Vox",
+  "detected_issue": "temporal disturbance",
+  "planet": "Zorax",
+  "danger_percentage": 70
+}
+**Story**:
+"On 17th of January 2026, MedSupply, a pharmaceutical supplier, signed an exclusive agreement with HealthHospitals, a chain of hospitals across the state. MedSupply will be the sole provider of a new antibiotic for HealthHospitals for the next two years. For each dose, MedSupply would charge $20. HealthHospitals expects to purchase approximately 50,000 doses each month. The contract also states that any bulk order above 100,000 doses in a single month would be eligible for a 10% discount."
+**Instruction**:
+"Based on the provided story, extract relevant entities and fill in the following JSON schema."
+**JSON Schema**:
+{
+  "contract_date": "number",
+  "supplier": "string",
+  "client": "string",
+  "product": "string",
+  "unit_price": "number",
+  "bulk_order_threshold": "number",
+  "bulk_order_discount_percentage": "number",
+  "estimated_monthly_units": "number",
+  "delivery_frequency_days": "number",
+  "exclusive_contract_duration_years": "number"
+}
+**Result**:

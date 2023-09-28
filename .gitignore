@@ -4,7 +4,7 @@
 # sample pdf for rag
 A-Game-Of-Thrones-Book.pdf
 half-blood-prince.pdf
-simplewiki-2020-11-01.jsonl.gz
+doc_samples/simplewiki-2020-11-01.jsonl.gz
 
 # chromadb
 chroma_db

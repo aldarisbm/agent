@@ -14,7 +14,7 @@ load_dotenv()
 callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 model_name = os.getenv("MODEL_PATH")
 grammar_file = os.getenv("GRAMMAR_FILE")
-pdf_file = "./pdf_samples/2304.12244.pdf"
+pdf_file = "doc_samples/2304.12244.pdf"
 store_name = os.path.basename(pdf_file)
 
 # -n 256 -c 2048  --mlock -ngl 20 --temp 0.8 --batch_size 512 \
