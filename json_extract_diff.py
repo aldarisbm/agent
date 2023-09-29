@@ -18,8 +18,9 @@ llm = LlamaCpp(
     use_mlock=True,
     grammar_path=grammar_file,
     n_batch=512,
-    n_ctx=4096,
-    n_gpu_layers=20,
+    n_ctx=8192,
+    max_tokens=4096,
+    n_gpu_layers=30,
     callback_manager=callback_manager,
     verbose=True,  # Verbose is required to pass to the callback manager
 )
