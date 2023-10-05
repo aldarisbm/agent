@@ -9,13 +9,12 @@ def read_data(wikipedia_filepath: str) -> List[str]:
     :param: wikipedia_filepath
     :return: list of passages
     """
-
-    passages = List[str]
+    passages = []
     with gzip.open(wikipedia_filepath, 'rt', encoding='utf8') as fIn:
         for line in fIn:
             data = json.loads(line.strip())
 
-            # Append all of paragraphs
-            passages.extend(data['paragraphs'])
+            paragraphs = data['paragraphs']
+            passages.extend(paragraphs)
 
     return passages

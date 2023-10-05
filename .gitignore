@@ -1,5 +1,6 @@
 .idea
 .env
+**/__pycache__
 
 # sample pdf for rag
 A-Game-Of-Thrones-Book.pdf
